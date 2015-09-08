@@ -2,7 +2,7 @@
   "author": "Andreea Bahnareanu <andreea.bahbareanu@s-team.at>",
   "name": "ah-sentry-plugin",
   "description": "Sentry plugin for actionhero",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
   "type": "git",
   "url": "git://github.com/Andreea25bv/ah-sentry-plugin.git"
