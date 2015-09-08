@@ -3,8 +3,8 @@
 var fs = require('fs');
 var path = require('path');
 
-var localFile   = path.normalize(__dirname + '/../config/database.js');
-var projectFile = path.normalize(process.cwd() + '/../../config/database.js');
+var localFile   = path.normalize(__dirname + '/../config/sentry.js');
+var projectFile = path.normalize(process.cwd() + '/../../config/sentry.js');
 
 if(!fs.existsSync(projectFile)){
   console.log("coppying " + localFile + " to " + projectFile)

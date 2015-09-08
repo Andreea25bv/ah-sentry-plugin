@@ -11,7 +11,9 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "raven": "^0.8.1"
+    },
   "devDependencies": {},
   "optionalDependencies": {},
   "scripts": {
