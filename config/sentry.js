@@ -7,13 +7,13 @@ require('../lib/resource');
 exports.default = {
   sentry: function(api){
     return {
-      dsn      :'https://72830ce2b52b41a2a54bb93622ce8eb3:731c828790744eccac9ae32eb2a4269a@sentry.s-team.at/15'          
+      dsn      :'https://<key>:<secret>@example.dsn.com/<project>'          
     }
   }
 }
 
 
-//Passing any falsey value as the DSN will disable sending events upstream
+//Passing any falsey value as the DSN will disable sending events upstream -> sentry is disabled during tests
 exports.test = {
   sentry: function(api){
     return {
