@@ -8,8 +8,26 @@ var init = function(api, next){
   }
     
   //create a custom error reporter that sends error to sentry
-  var sentryErrorReporter = function(err, type, name, objects, severity){     
-    api.sentry.client.captureError(err);
+  var sentryErrorReporter = function(err, type, name, objects, severity){    
+     var options = {
+      level: severity,
+      extra: {
+        error_type: type,
+        name: name        
+     }
+    };
+
+    if(type=='action'){
+      var user = {
+        id: objects.connection.user.id,
+        email: objects.connection.user.email,
+        ip: objects.connection.remoteIP
+      };
+      options.user = user;
+      options.params = objects.connection.params;
+    }  
+
+    api.sentry.client.captureError(err, options);
   }
   
   //add custom reporter 

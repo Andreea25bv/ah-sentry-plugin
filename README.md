@@ -5,5 +5,3 @@
 
 This plugin uses Sentry(Raven). For more details visit:
 https://docs.getsentry.com/hosted/clients/node/
-
-
