@@ -1,7 +1,0 @@
-node_modules
-node_modules_orig
-log
-pids
-npm-debug.log
-notification-api.sqlite3
-test.sqlite3
