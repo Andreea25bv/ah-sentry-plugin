@@ -1,5 +1,3 @@
-require('../lib/resource');
-
 /**
  * sentry configuration.
  */
