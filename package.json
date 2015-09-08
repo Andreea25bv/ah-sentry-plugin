@@ -1,0 +1,20 @@
+{
+  "author": "Andreea Bahnareanu <andreea.bahbareanu@s-team.at>",
+  "name": "ah-sentry-plugin",
+  "description": "Sentry plugin for actionhero",
+  "version": "1.0.0",
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/evantahler/ah-sample-plugin.git"
+  },
+  "keywords": ["actionherojs", "actionhero", "sample", "ah-sample-plugin", "plugin", "sample plugin"],
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "scripts": {
+    "postinstall": "scripts/postinstall.js"
+  }
+}
