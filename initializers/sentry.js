@@ -3,13 +3,11 @@ var raven = require('raven');
 var init = function(api, next){    
   var client = new raven.Client(api.config.sentry.dsn);
 
-  api.sentry = {
-      client: client
-  }
+  api.sentry = client;
     
   //create a custom error reporter that sends error to sentry
   var sentryErrorReporter = function(err, type, name, objects, severity){    
-     var options = {
+    var options = {
       level: severity,
       extra: {
         error_type: type,
@@ -18,16 +16,17 @@ var init = function(api, next){
     };
 
     if(type=='action'){
-      var user = {
-        id: objects.connection.user.id,
-        email: objects.connection.user.email,
-        ip: objects.connection.remoteIP
-      };
+      var user = {ip: objects.connection.remoteIP};
+      if(objects.connection.user){
+        user.id = objects.connection.user.id;
+        user.email = objects.connection.user.email;
+      }
+
       options.user = user;
       options.params = objects.connection.params;
     }  
 
-    api.sentry.client.captureError(err, options);
+    api.sentry.captureError(err, options);
   }
   
   //add custom reporter 
